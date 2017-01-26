@@ -1,0 +1,39 @@
+{
+  "name": "anotherpinodegarageopener",
+  "version": "1.0.0",
+  "description": "API and client for our AnotherPiNodeGarageOpener project",
+  "main": "server/index.js",
+  "scripts": {
+    "clean": "echo 'this will display an error on windows - feel free to ignore' && gulp clean && npm run clean:n",
+    "clean:n": "rimraf ./node_modules",
+    "nodemon:w": "nodemon --delay 2000ms server/index.js -e js --watch lib",
+    "postinstall": "npm install rimraf -g && typings install",
+    "startserver": "tsc && concurrently -kr \"npm run tsc:w\" \"npm run nodemon:w\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "typings": "typings"
+  },
+  "author": "Randy Bacon",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baconapplications/AnotherPiNodeGarageOpener.git"
+    },
+  "dependencies": {
+    "express": "~4.14.0",
+    "body-parser": "~1.16.0",
+    "compression": "~1.6.2",
+    "moment": "~2.17.1",
+    "morgan": "~1.7.0",
+    "winston": "~2.3.1"
+  },
+  "devDependencies": {
+    "concurrently": "^3.1.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "nodemon": "^1.11.0",
+    "typescript": "^2.1.5",
+    "typings": "^2.1.0"
+  }
+}
