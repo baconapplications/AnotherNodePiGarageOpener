@@ -27,11 +27,20 @@ function init(app: express.Application) {
         next();
     });
 
+    //TODO auth check - token compare
+
     //insert any pre request handling here
     app.use(bodyParser.json());
     app.use(compression());
 
     //routes start here!
+
+    //TODO api end points 
+    //  listener for "garage button push" (button controller)
+    //  return top 1 stat (stat controller)
+    //  return paging/sorted list of stats (stat controller)
+
+    //TODO future - endpoint checks open stats and sends alert - call from cron?
     
     //TODO real controllers here
     //_addController(app, "/user", require("../controllers/userController"));
@@ -41,13 +50,18 @@ function init(app: express.Application) {
         _addController(app, "/apitest", require("../controllers/apiTestController"));
     }
 
+    //TODO set up hardware listeners here
+    //http://stackoverflow.com/questions/14440204/async-raspberry-pi-gpio-events-in-nodejs
+
+    //TODO listener for magnetic switch - write status to db on change - seperate lib with interval
+    //      expose class method for close to clear interval on server shutdown
+
     //html routes start here
     var renderIndex = (req: express.Request, res: express.Response) => {
         res.sendFile(path.resolve(__dirname, '../../../client/index.html'));
     }
 
     //TODO additional HTML client paths here
-
     app.get('/*', renderIndex);
 
     //404 handler
@@ -84,6 +98,8 @@ function init(app: express.Application) {
 function _addController(app: express.Application, routePath: string, controller: BaseController) {
     app.use(routePath, controller.getRouter());
 }
+
+//TODO function for server shutdown - close db, close hardware monitoring
 
 export function createServer(): express.Application {
     var app = express();

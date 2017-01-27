@@ -8,6 +8,7 @@
     "compression": "registry:dt/compression#0.0.0+20160725212620",
     "express": "registry:dt/express#4.0.0+20170118060322",
     "express-serve-static-core": "registry:dt/express-serve-static-core#4.0.0+20161228005052",
+    "mongodb": "registry:npm/mongodb#2.1.0+20170107184700",
     "morgan": "registry:dt/morgan#1.7.0+20160726064905",
     "winston": "registry:dt/winston#2.2.0+20170106144044"
   }
