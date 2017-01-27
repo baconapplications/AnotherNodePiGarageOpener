@@ -26,7 +26,7 @@ process.on("SIGTERM", function () {
 });
 
 function shutdown() {
-    //TODO any interval clean up
+    appHelper.dispose();
     console.log("Exiting...");
     process.exit(0);
 }

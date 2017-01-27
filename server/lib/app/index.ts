@@ -11,6 +11,7 @@ import * as compression from "compression";
 import * as uLog from "../util/logger";
 import path = require('path');
 import BaseController from "../controllers/baseController";
+import * as db from "../datalayer";
 
 //wire up our app via init function
 function init(app: express.Application) {
@@ -99,12 +100,35 @@ function _addController(app: express.Application, routePath: string, controller:
     app.use(routePath, controller.getRouter());
 }
 
-//TODO function for server shutdown - close db, close hardware monitoring
-
+/**
+ * create an instance of our express app and return it
+ * 
+ * @export
+ * @returns {express.Application}
+ */
 export function createServer(): express.Application {
     var app = express();
     init(app);
     return app;  
 };
+
+/**
+ * function to close our server and do clean ups
+ * 
+ * @export
+ */
+export function dispose() {
+    //TODO any hardware clean up here
+
+    //clean up the db connection
+    try {
+        db.close();
+        uLog.default.debug("db conn closed", "App");
+    } 
+    catch(err)
+    {
+        uLog.default.error("Error on db close", "App", err);
+    }
+}
 
 export var serverPort = config.serverPort;
