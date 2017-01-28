@@ -43,12 +43,12 @@ function init(app: express.Application) {
 
     //TODO future - endpoint checks open stats and sends alert - call from cron?
     
-    //TODO real controllers here
-    //_addController(app, "/user", require("../controllers/userController"));
+    //real controllers here
+    _addController(app, "/api", require("../controllers/statController"));
 
     //dev only routes and handlers
     if(config.isDev){
-        _addController(app, "/apitest", require("../controllers/apiTestController"));
+        _addController(app, "/api/test", require("../controllers/apiTestController"));
     }
 
     //TODO set up hardware listeners here
@@ -117,18 +117,24 @@ export function createServer(): express.Application {
  * 
  * @export
  */
-export function dispose() {
-    //TODO any hardware clean up here
+export function dispose() : Promise<void> {
+    //TODO any hardware clean up here - nest in promise chain if need be
 
-    //clean up the db connection
-    try {
-        db.close();
-        uLog.default.debug("db conn closed", "App");
-    } 
-    catch(err)
-    {
-        uLog.default.error("Error on db close", "App", err);
-    }
+    //db clean up require promise
+    return new Promise<void>( (resolve, reject) => {
+        //clean up the db connection
+        db.close()
+        .then(()=>
+        {
+            uLog.default.debug("db conn closed", "App");
+            resolve();
+        })
+        .catch( (err) => {
+            uLog.default.error("Error on db close", "App", err);
+            reject();
+        });
+    });
+    
 }
 
 export var serverPort = config.serverPort;

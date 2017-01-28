@@ -25,10 +25,19 @@ process.on("SIGTERM", function () {
     shutdown();
 });
 
+/**
+ * Helper to actuallly shutdown our server cleanly
+ */
 function shutdown() {
-    appHelper.dispose();
-    console.log("Exiting...");
-    process.exit(0);
+    appHelper.dispose()
+    .then(() => {
+        console.log("Exiting...");
+        process.exit(0);
+    })
+    .catch((error) => {
+        console.error("Error while disposing...", error);
+        process.exit(0);
+    });
 }
 
 //TODO 

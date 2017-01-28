@@ -10,7 +10,7 @@ class ApiTestController extends BaseController
 {
     protected _configRouter() {
         /**
-         * GET: /apitest/hello/:text
+         * GET: /api/test/hello/:text
          */
         this._router.get("/hello/:text", (req, res, next) => {
 

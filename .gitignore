@@ -49,3 +49,5 @@ typings/
 **/server/*.js
 **/server/lib/**/*.js
 **/server/lib/**/*.map
+**/lib/**/*.js
+**/lib/**/*.map

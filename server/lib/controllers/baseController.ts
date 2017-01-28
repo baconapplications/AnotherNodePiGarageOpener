@@ -29,7 +29,7 @@ export class BaseController {
     /**
      * helper to send a result based on the returned IServiceResult
      */
-    sendResult<T>(serviceResult: IServiceResult<T>, req, res, next)
+    sendResult<T>(serviceResult: IServiceResult<T>, req, res: express.Response, next)
     {
         if(!serviceResult || serviceResult.notFound || !serviceResult.result) {
             next();
