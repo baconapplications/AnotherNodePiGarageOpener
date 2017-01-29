@@ -38,9 +38,7 @@ function init(app: express.Application) {
 
     //TODO api end points 
     //  listener for "garage button push" (button controller)
-    //  return top 1 stat (stat controller)
-    //  return paging/sorted list of stats (stat controller)
-
+    
     //TODO future - endpoint checks open stats and sends alert - call from cron?
     
     //real controllers here

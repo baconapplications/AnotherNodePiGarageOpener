@@ -6,6 +6,13 @@ interface IResult<T> {
     data: T;
 }
 
-interface IListResult<T> extends IResult<T> {
-    count: number;
+/**
+ * Counter wrapper for result
+ * 
+ * @interface ICountResult
+ * @extends {IResult<T>}
+ * @template T
+ */
+interface ICountResult<T> extends IResult<T> {
+    total: number;
 }
