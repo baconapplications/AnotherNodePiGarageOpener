@@ -51,3 +51,4 @@ typings/
 **/server/lib/**/*.map
 **/lib/**/*.js
 **/lib/**/*.map
+dist/
