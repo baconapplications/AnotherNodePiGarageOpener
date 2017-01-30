@@ -9,13 +9,13 @@
     "clean:js": "gulp clean-js",
     "clean:n": "rimraf ./node_modules",
     "nodemon:w": "nodemon --delay 2000ms server/index.js -e js --watch lib",
-    "postinstall": "npm install rimraf -g && typings install",
     "publish": "gulp clean-js && tsc --sourceMap false && npm run copy:dist",
     "startserver": "tsc && concurrently -kr \"npm run tsc:w\" \"npm run nodemon:w\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "typings": "typings"
+    "typings": "typings",
+    "typings:install": "typings install"
   },
   "author": "Randy Bacon",
   "license": "MIT",

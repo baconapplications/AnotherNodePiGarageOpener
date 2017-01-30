@@ -11,11 +11,13 @@ _NOTES:_
 
 * I am are using a local version of gulp.  You are not required to have gulp installed
 
-* npm install will install rimraf globally if you do not have it installed.
+* the rimraf NPM module is required globally and must be installed
 
 ## Getting Started
 
-Pull the project locally.  Before opening the project in VS Code, go to the directory and run "npm install".  Note, I am currently running in Windows Powershell...
+Pull the project locally.  Before opening the project in VS Code, go to the directory and run "npm install"
+
+Once npm install is complete run "npm run typings:install" to install typings
 
 Once npm install is complete, open the api directory in Visual Studio Code (or IDE of choice).  Visual Studio Code will use the locally installed version of Typescript.
 
@@ -30,3 +32,7 @@ Run "npm clean" to remove all generated *.js files and the node_modules director
 
 ### Install/Update Typing
     npm run typings -- install node --global --source dt --save
+
+## Publishing
+
+To publish the project to the "dist" directory use "npm run publish".  This will build a clean solution and copy it to the "dist" directory.

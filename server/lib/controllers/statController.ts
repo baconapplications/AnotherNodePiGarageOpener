@@ -7,7 +7,7 @@
 import BaseController from "./baseController";
 import * as db from "../datalayer";
 import Stat from "../../../lib/models/stat";
-import Success from "../../../lib/models/Success";
+import Success from "../../../lib/models/success";
 
 class StatController extends BaseController
 {
