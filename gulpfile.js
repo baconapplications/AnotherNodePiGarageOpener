@@ -17,7 +17,7 @@ gulp.task('clean-js', function () {
 
 gulp.task('clean-dist', function() {
     return del(
-        'dist/**/*'
+        'dist/server/**/*'
     );
 });
 
@@ -27,5 +27,5 @@ gulp.task('copy', function(){
        '*lib/**/*.js',
        '*server/**/*.js',
        '*client/index.html'
-    ]).pipe(gulp.dest('dist/'));
+    ]).pipe(gulp.dest('dist/server/'));
 });

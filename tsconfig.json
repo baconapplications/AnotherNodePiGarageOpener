@@ -2,11 +2,12 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "sourceMap": true,
-    "removeComments": true
+    "removeComments": true,
+    "sourceMap": true
   },
   "exclude": [
-        "node_modules",
-        ".vscode"
-    ]
+    "node_modules",
+    ".vscode",
+    "client"
+  ]
 }

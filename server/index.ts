@@ -40,13 +40,7 @@ function shutdown() {
     });
 }
 
-//TODO 
-//  set up gulp for NPM
-//
-//  install pi wifi card - turn off sleep function
-//  assign fixed IP
-//  ensure boot headless
-//
+//TODO
 //  wire up hardware to make relay work
 //  wire up hardware to make switch work
 //  led status?
