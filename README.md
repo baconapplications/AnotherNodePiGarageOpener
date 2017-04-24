@@ -17,21 +17,11 @@ _NOTES:_
 
 Pull the project locally.  Before opening the project in VS Code, go to the directory and run "npm install"
 
-Once npm install is complete run "npm run typings:install" to install typings
-
 Once npm install is complete, open the api directory in Visual Studio Code (or IDE of choice).  Visual Studio Code will use the locally installed version of Typescript.
 
 Run "npm run start" to have Typescript compile on change and also have nodemon run the server.js script.
 
 Run "npm clean" to remove all generated *.js files and the node_modules directory.
-
-## Using Typings
-
-### Search for a Typing
-    npm run typings -- search node
-
-### Install/Update Typing
-    npm run typings -- install node --global --source dt --save
 
 ## Publishing
 
