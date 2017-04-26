@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 
 export class HomeComponent {
+  public isOpen: boolean = true;
+  public historyLoaded: boolean = false;
+  public loadingHistory: boolean = false;
+
+  buttonText() {
+    return this.isOpen ? "Close Door" : "Open Door";
+  }
 }

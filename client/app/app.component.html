@@ -1,29 +1,13 @@
-<h3>
-  Angular 2 Seed
-</h3>
-<nav>
-	<a [routerLink]="['/']">
-    Home
-  </a>
-  |
-	<a [routerLink]="['/about']">
-    About
-  </a>
-  |
-	<a [routerLink]="['/github', 'angular']">
-    Github Repos
-  </a>
-  |
-	<a [routerLink]="['/contact']">
-    Contact Us
-  </a>
-</nav>
-
-<main>
-	<router-outlet></router-outlet>
-</main>
-
-
-<footer>
-  © 2016
-</footer>
+<md-sidenav-container class="m2app-dark">
+  <md-toolbar color="primary">
+    Garage Door Status
+    <span class="app-toolbar-filler"></span>
+    <md-chip-list>
+      <span [hidden]="!isOpen"><md-chip color="accent" class="toolbar-accent-background status-open"><md-icon>lock_open</md-icon> <div class="chip-with-icon-text">OPEN</div></md-chip></span>
+      <span [hidden]="isOpen"><md-chip color="accent" class="toolbar-accent-background status-closed"><md-icon>lock_outline</md-icon> <div class="chip-with-icon-text">CLOSED</div></md-chip></span>
+    </md-chip-list>
+  </md-toolbar>
+  <div class="app-content">
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-container>

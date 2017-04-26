@@ -11,7 +11,8 @@ import { MapToIterable } from './pipe/MapToIterable.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-import { MaterialModule}  from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule, MdSelectionModule }  from '@angular/material';
 //TODO do i need this?
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
@@ -29,7 +30,9 @@ import { HomeComponent } from './home/home.component';
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule, 
-    MaterialModule.forRoot()
+    BrowserAnimationsModule,
+    MaterialModule.forRoot(),
+    MdSelectionModule
   ],
   providers: [
     //GithubService
