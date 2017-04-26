@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 
 export class HomeComponent {
   public isOpen: boolean = true;
-  public historyLoaded: boolean = false;
+  public historyLoaded: boolean = true;
   public loadingHistory: boolean = false;
 
   buttonText() {

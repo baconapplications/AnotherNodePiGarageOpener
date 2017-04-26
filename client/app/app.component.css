@@ -77,3 +77,9 @@ md-sidenav-container.m2app-dark {
   display:inline-block;
   position:relative;
 }
+
+/* prevent focus blue box on chip in toolbar */
+ .mat-toolbar-layout div.mat-chip-list-wrapper span md-chip {
+    outline: none;
+    border: none;
+ }
