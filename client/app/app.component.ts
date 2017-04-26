@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { DoorService } from './services/door.service';
 
 @Component({
   selector: 'app',
@@ -7,6 +8,15 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   public isOpen: boolean = true;
+
+  constructor(private doorService: DoorService) {
+  }
+
+  ngOnInit(): void {
+    this.doorService.isDoorOpened$.subscribe(isDoorOpened => {
+      this.isOpen = isDoorOpened;
+    });
+  }
 }

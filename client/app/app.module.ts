@@ -5,7 +5,9 @@ import { AppRoutingModule } from "./app.routes";
 import { AppComponent } from './app.component';
 //filters
 import { MapToIterable } from './pipe/MapToIterable.pipe';
+
 //services
+import{ DoorService } from './services/door.service';
 
 //ng modules
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -35,7 +37,7 @@ import { HomeComponent } from './home/home.component';
     MdSelectionModule
   ],
   providers: [
-    //GithubService
+    DoorService
   ],
   bootstrap: [ AppComponent ]
 })

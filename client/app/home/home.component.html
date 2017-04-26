@@ -1,5 +1,5 @@
 <md-card class="garage-button-wrap">
-    <button md-raised-button color="primary" class="garage-button">{{buttonText()}}</button>
+    <button md-raised-button color="primary" class="garage-button" (click)="doorClick()">{{buttonText}}</button>
 </md-card>
 <md-card>
     <md-card-title>History</md-card-title>
@@ -59,7 +59,7 @@
         <md-card-actions>
             <div class="pages"><span class="mat-button" style="cursor:default;">Page 1 of 40</span></div>
             <button md-button style="position:absolute;left:10px;">Prev Page</button>
-            <button md-button style="position:absolute;right:10px;">Next Page</button>
+            <button md-button style="position:absolute;right:10px;" (click)="nextPage()">Next Page</button>
         </md-card-actions>
     </span>
     <span [hidden]="historyLoaded">
