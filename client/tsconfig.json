@@ -3,7 +3,7 @@
     "target": "es5",
     "module": "commonjs",
     "removeComments": true,
-    "rootDir": ".",
+    "rootDir": "../",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -16,7 +16,7 @@
   "exclude": [
         "node_modules",
         ".vscode",
-        "typings"
+        "server"
     ],
     "awesomeTypescriptLoaderOptions": {
       "useWebpackText": true

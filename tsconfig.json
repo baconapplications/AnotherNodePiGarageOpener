@@ -5,6 +5,8 @@
     "removeComments": true,
     "sourceMap": true,
     "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "typeRoots": [
       "../node_modules/@types"
     ],

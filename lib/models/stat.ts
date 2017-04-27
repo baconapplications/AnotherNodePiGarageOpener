@@ -12,3 +12,5 @@ export default class Stat
      status: number;
      timestamp: Date
 }
+
+//status 0 is closed - 1 is opened
